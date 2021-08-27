@@ -1,10 +1,13 @@
 import { Component, Input, OnInit, EventEmitter } from '@angular/core';
 import { BUTTONS, LIGHTERS, POSITIONS } from '../button/button.component';
+import { ViewEncapsulation } from "@angular/core";
 
 @Component({
   selector: 'app-row',
   templateUrl: './row.component.html',
   styleUrls: ['./row.component.scss'],
+  encapsulation: ViewEncapsulation.None
+
 })
 export class RowComponent implements OnInit {
   @Input() buttonArmed: boolean = false;

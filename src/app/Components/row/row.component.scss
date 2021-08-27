@@ -1,18 +1,17 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-:host {
-}
 
 .button-list,
 .lighter-list,
 .position-list {
-  display: inline-flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: baseline;
-  flex-basis: auto;
+  display: inline-flex!important;
+  flex-direction: row!important;
+  // justify-content: space-around;
+  // flex-wrap: nowrap;
+  align-items: center!important;
+  width: 100%!important;
   // flex-grow: 1;
-  padding: 30px;
+  padding: 5px;
 }
 
 .button-list:after {
@@ -21,6 +20,7 @@
 .button-list__buttons {
   height: 50px;
   width: 50px;
+  align-self: center;
 }
 
 .button-list__buttons:hover {
@@ -47,6 +47,14 @@
 }
 
 .lighter-list__lights {
+  display: flex!important;
+  flex-direction: column!important;
+  justify-content: space-between!important;
+  height: 2vw!important;
+  width: 2vw!important;
+  border-radius: 100%;
+  background-color: black;
+  
 }
 
 .itsLit {
@@ -56,4 +64,8 @@
 }
 
 .position-list__numbers {
+align-self: center!important;
+text-align: center!important;
+font-family: "Citypop"!important;
 }
+
