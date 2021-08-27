@@ -1,95 +1,30 @@
-* {
-    box-sizing: border-box;
-  }
-  body {
-    font-size: 14px;
-  }
-  .v4_1408 {
-    width: 100%;
-    height: 1080px;
-    // background: url("../images/v4_1408.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    opacity: 1;
-    position: relative;
-    top: 0px;
-    left: 0px;
-    overflow: hidden;
-  }
-  .v4_1409 {
-    width: 100%;
-    height: 100%;
-    background: rgba(32,32,32,1);
-    opacity: 1;
-    position: relative;
-    top: 0px;
-    left: 0px;
-  }
-  .v4_1408 {
-    width: 100%;
-    height: 1080px;
-    // background: url("../images/v4_1408.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    opacity: 1;
-    position: relative;
-    top: 0px;
-    left: 0px;
-    overflow: hidden;
-  }
-  .v4_1409 {
-    width: 100%;
-    height: 100%;
-    background: rgba(32,32,32,1);
-    opacity: 1;
-    position: relative;
-    top: 0px;
-    left: 0px;
-  }
-  .v4_1408 {
-    width: 100%;
-    height: 1080px;
-    // background: url("../images/v4_1408.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    opacity: 1;
-    position: relative;
-    top: 0px;
-    left: 0px;
-    overflow: hidden;
-  }
-  .v4_1409 {
-    width: 100%;
-    height: 100%;
-    background: rgba(32,32,32,1);
-    opacity: 1;
-    position: relative;
-    top: 0px;
-    left: 0px;
-  }
-  .v4_1408 {
-    width: 100%;
-    height: 1080px;
-    // background: url("../images/v4_1408.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    opacity: 1;
-    position: relative;
-    top: 0px;
-    left: 0px;
-    overflow: hidden;
-  }
-  .v4_1409 {
-    width: 100%;
-    height: 100%;
-    background: rgba(32,32,32,1);
-    opacity: 1;
-    position: relative;
-    top: 0px;
-    left: 0px;
-  }
-  
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.interface-container {
+  margin: 10%;
+  display: grid;
+  width: 70%;
+  grid-template-areas:
+    "header"
+    "main";
+  grid-template-columns: 4fr;
+  grid-template-rows: 30% 70%;
+  background-color: #202020;
+  //   border:solid 3px #red;
+  // -moz-border-radius: 10px;
+  // -webkit-border-radius: 10px;
+  // border-radius: 10px;
+}
+
+.header-container {
+  width: 100%;
+  grid-template-areas: "header";
+padding-bottom: 20rem;
+  background-color: midnightblue;
+}
+
+.app-row__container {
+  width: 100%;
+  grid-template-areas: "main";
+
+  background-color: grey;
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MetronomeComponent } from "../metronome/metronome.component";
 
 @Component({
   selector: 'app-interface',

@@ -1,0 +1,59 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+:host {
+}
+
+.button-list,
+.lighter-list,
+.position-list {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: baseline;
+  flex-basis: auto;
+  // flex-grow: 1;
+  padding: 30px;
+}
+
+.button-list:after {
+}
+
+.button-list__buttons {
+  height: 50px;
+  width: 50px;
+}
+
+.button-list__buttons:hover {
+  background-color: blue;
+}
+
+.isInactive {
+  background-color: black;
+}
+
+.isArmed {
+  background-color: red;
+}
+
+.isLive {
+  background-color: green;
+}
+
+.isCounting {
+  background-color: black;
+}
+
+.lighter-list {
+}
+
+.lighter-list__lights {
+}
+
+.itsLit {
+}
+
+.position-list {
+}
+
+.position-list__numbers {
+}
