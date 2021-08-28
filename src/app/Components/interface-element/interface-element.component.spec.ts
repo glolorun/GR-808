@@ -1,20 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { InterfaceElementComponent } from './interface-element.component';
 
-import { RowComponent } from './row.component';
-
-describe('RowComponent', () => {
-  let component: RowComponent;
-  let fixture: ComponentFixture<RowComponent>;
+describe('InterfaceElementComponent', () => {
+  let component: InterfaceElementComponent;
+  let fixture: ComponentFixture<InterfaceElementComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RowComponent ]
+      declarations: [ InterfaceElementComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RowComponent);
+    fixture = TestBed.createComponent(InterfaceElementComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

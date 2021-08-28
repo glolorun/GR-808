@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { InterfaceComponent } from './interface.component';
 
 describe('InterfaceComponent', () => {
@@ -8,9 +7,8 @@ describe('InterfaceComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InterfaceComponent ]
-    })
-    .compileComponents();
+      declarations: [InterfaceComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

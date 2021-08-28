@@ -1,1 +1,36 @@
-<div></div>
+<div>
+  <button>Kick Test</button>
+  <mat-list  role="list" class="track-list" id="selector-{{'track-' + $index}}">
+    <button *ngFor="let instrumentButton of instrumentButtons; ; let i = index;" [attr.id]="'step-' + i" type="button">{{instrumentButton.value}}</button>
+    <mat-list-item class="step-list" *ngFor="let step of steps; let i = index;" [attr.id]="'step-' + i"
+      >{{ step.value }}
+      <button
+        class="step-list__steps"
+        (click)="(clickButton)"
+        [ngClass]="{
+          isInactive: !stepArmed && !currentNote,
+          isArmed: stepArmed && !currentNote,
+          isLive: stepArmed && currentNote,
+          isCounting: !stepArmed && currentNote
+        }"
+      ></button>
+    </mat-list-item>
+  </mat-list>
+  <mat-list role="list" class="lighter-list">
+    <mat-list-item
+      class="lighter-list__lights"
+      [ngClass]="{
+        itsLit: itsLit
+      }"
+      *ngFor="let lighter of lighters; let i = index;" [attr.id]="'step-' + i"
+      >{{ lighter.value }}
+    </mat-list-item>
+  </mat-list>
+  <mat-list role="list" class="position-list">
+    <mat-list-item
+      class="position-list__number"
+      *ngFor="let position of positions"
+      ><p>{{ position.value }}</p>
+    </mat-list-item>
+  </mat-list>
+</div>
