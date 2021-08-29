@@ -1,13 +1,14 @@
 <div class="grid-wrapper">
   <div class="grid-1">
   <mat-list  role="list" class="track-list" >
-    <button class="instrument-select" (click)="getInstrument()">Kick Test</button>
+    <button class="instrument-select" (click)="getInstrument()" (click)="startloop()">{{instrumentName}}</button>
     <!-- <button *ngFor="let instrumentButton of instrumentButtons; ; let i = index;" [attr.id]="'step-' + i" type="button">{{instrumentButton.value}}</button> -->
     <mat-list-item class="step-list" *ngFor="let step of steps; let i = index;" [attr.id]="'step-' + i"
       >{{ step.value }}
       <button
         class="step-list__steps"
         (click)="getInstrument()"
+        (keypress)="getInstrument()"
         [ngClass]="{
           isInactive: !stepArmed && !currentNote,
           isArmed: stepArmed && !currentNote,
