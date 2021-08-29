@@ -1,12 +1,13 @@
-<div>
-  <button (click)="getInstrument()">Kick Test</button>
+<div class="grid-wrapper">
+  <div class="grid-1">
   <mat-list  role="list" class="track-list" >
-    <button *ngFor="let instrumentButton of instrumentButtons; ; let i = index;" [attr.id]="'step-' + i" type="button">{{instrumentButton.value}}</button>
+    <button class="instrument-select" (click)="getInstrument()">Kick Test</button>
+    <!-- <button *ngFor="let instrumentButton of instrumentButtons; ; let i = index;" [attr.id]="'step-' + i" type="button">{{instrumentButton.value}}</button> -->
     <mat-list-item class="step-list" *ngFor="let step of steps; let i = index;" [attr.id]="'step-' + i"
       >{{ step.value }}
       <button
         class="step-list__steps"
-        (click)="(clickButton)"
+        (click)="getInstrument()"
         [ngClass]="{
           isInactive: !stepArmed && !currentNote,
           isArmed: stepArmed && !currentNote,
@@ -16,6 +17,8 @@
       ></button>
     </mat-list-item>
   </mat-list>
+</div>
+<div class="grid-2">
   <mat-list role="list" class="lighter-list">
     <mat-list-item
       class="lighter-list__lights"
@@ -26,6 +29,8 @@
       >{{ lighter.value }}
     </mat-list-item>
   </mat-list>
+</div>
+<div class="grid-3">
   <mat-list role="list" class="position-list">
     <mat-list-item
       class="position-list__number"
@@ -33,4 +38,5 @@
       ><p>{{ position.value }}</p>
     </mat-list-item>
   </mat-list>
+</div>
 </div>

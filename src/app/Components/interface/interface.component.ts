@@ -7,6 +7,7 @@ import {
 } from '../interface-element/interface-element.component';
 import { ViewEncapsulation } from '@angular/core';
 import { InstrumentService } from '../instruments/instrument.service';
+import { LogService } from 'src/app/Utility/log.service';
 
 @Component({
   selector: 'app-interface',
@@ -35,7 +36,10 @@ export class InterfaceComponent implements OnInit {
   instrumentButtons = INSTRUMENTBUTTONS;
   handleInstrument: void;
 
-  constructor(private instrumentService: InstrumentService) {}
+  constructor(
+    private instrumentService: InstrumentService,
+    private logger: LogService
+  ) {}
 
   getInstrument(): void {
     this.instrumentEvent.emit,

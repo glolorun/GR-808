@@ -1,25 +1,44 @@
 import { Injectable, Output, EventEmitter } from '@angular/core';
+import { Transport } from "tone";
 import { Kick } from "src/app/Engines/kick";
+import { LogService } from "src/app/Utility/log.service";
+
+
+
+export const InstrumentSelect = {
+  Kick: 'Kick',
+  Snare: 'Snare',
+  Hat: 'Hat',
+};
+
+export interface TemplateLiteral {
+   name: string;
+}
+
+const name = InstrumentSelect.Kick
+
 @Injectable({
   providedIn: 'root'
 })
 
-
 export class InstrumentService {
 
-    // private sound: any;
     private ctx: AudioContext;
-    // private loopId: number;
-    //////////////For Testing /////////////////////
-    @Output()
-    public sampleTrig = new EventEmitter<MouseEvent>();
+    @Output() public sampleTrig = new EventEmitter<MouseEvent>();
     private kick: Kick;
-  
-    constructor() {
+
+    public importName = name
+
+    constructor(private logger: LogService) {
       this.ctx = new AudioContext();
       this.kick = new Kick(this.ctx);
+
     }
     public triggerInstruments()  {
-      this.kick.trigger(this.ctx.currentTime);
+      this.kick.trigger(this.ctx.currentTime), this.testLog();
+
     };
+    testLog(): void {
+      this.logger.log('Trigging ' + this.importName);
+    }
 }

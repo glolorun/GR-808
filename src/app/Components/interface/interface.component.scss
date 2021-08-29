@@ -1,20 +1,24 @@
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+// @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-.step-list,
-.lighter-list,
-.position-list {
-  display: inline-flex !important;
-  flex-direction: row !important;
-  // justify-content: space-around;
-  // flex-wrap: nowrap;
-  align-items: center !important;
-  width: 100% !important;
-  // flex-grow: 1;
-  padding: 5px;
+mat-list,
+.track-list {
+  display: flex!important;
+  // gap: 20px;
+
+    min-width: 0!important;
+  min-height: 0!important;
+
 }
 
-.step-list:after {
+mat-list-item,
+.step-list__steps {
+  min-height: 0!important;
+  // grid-template-columns : repeat(5,1fr);
+  // grid-template-rows : repeat(5,1fr);
 
+}
+
+.step-list__steps {
   height: 50px;
   width: 50px;
   align-self: center;
@@ -44,9 +48,10 @@
 // }
 
 .lighter-list__lights {
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: space-between !important;
+  // display: flex !important;
+  // justify-content: space-between !important;
+  position: relative;
+  left: 20px;
   height: 2vw !important;
   width: 2vw !important;
   border-radius: 100%;
@@ -60,7 +65,8 @@
 // }
 
 .position-list__numbers {
-  align-self: center !important;
-  text-align: center !important;
+  // align-items: center;
+  // text-align: center !important;
   font-family: "Citypop" !important;
+  // align-self: center;
 }
