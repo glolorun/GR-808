@@ -15,7 +15,7 @@ export class InstrumentService {
     public sampleTrig = new EventEmitter<MouseEvent>();
     private kick: Kick;
   
-    constructor(private service: InstrumentService) {
+    constructor() {
       this.ctx = new AudioContext();
       this.kick = new Kick(this.ctx);
     }

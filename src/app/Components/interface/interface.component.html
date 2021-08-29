@@ -1,6 +1,6 @@
 <div>
-  <button>Kick Test</button>
-  <mat-list  role="list" class="track-list" id="selector-{{'track-' + $index}}">
+  <button (click)="getInstrument()">Kick Test</button>
+  <mat-list  role="list" class="track-list" >
     <button *ngFor="let instrumentButton of instrumentButtons; ; let i = index;" [attr.id]="'step-' + i" type="button">{{instrumentButton.value}}</button>
     <mat-list-item class="step-list" *ngFor="let step of steps; let i = index;" [attr.id]="'step-' + i"
       >{{ step.value }}

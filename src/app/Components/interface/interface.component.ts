@@ -7,12 +7,11 @@ import {
 } from '../interface-element/interface-element.component';
 import { ViewEncapsulation } from '@angular/core';
 import { InstrumentService } from '../instruments/instrument.service';
-import { Instrument } from "tone/build/esm/instrument/Instrument";
 
 @Component({
   selector: 'app-interface',
-  templateUrl: './Interface.component.html',
-  styleUrls: ['./Interface.component.scss'],
+  templateUrl: './interface.component.html',
+  styleUrls: ['./interface.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
 export class InterfaceComponent implements OnInit {
@@ -38,12 +37,10 @@ export class InterfaceComponent implements OnInit {
 
   constructor(private instrumentService: InstrumentService) {}
 
-  getInstrument(trig: boolean): void {
+  getInstrument(): void {
     this.instrumentEvent.emit,
-    this.handleInstrument = this.instrumentService.triggerInstruments();
+      (this.handleInstrument = this.instrumentService.triggerInstruments());
   }
-
-  public instrumentTrig = this.getInstrument()
 
   // listClick(event, newValue) {
   //   console.log(newValue);
@@ -51,6 +48,5 @@ export class InterfaceComponent implements OnInit {
   //   // ... do other stuff here ...
   // }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 }

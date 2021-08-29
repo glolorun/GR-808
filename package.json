@@ -21,6 +21,7 @@
     "@angular/platform-browser": "~12.1.0",
     "@angular/platform-browser-dynamic": "~12.1.0",
     "@angular/router": "~12.1.0",
+    "mdn-polyfills": "^5.20.0",
     "rxjs": "~6.6.0",
     "save": "^2.4.0",
     "tone": "^14.7.77",

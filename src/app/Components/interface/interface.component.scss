@@ -1,23 +1,20 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-
 .step-list,
 .lighter-list,
 .position-list {
-  display: inline-flex!important;
-  flex-direction: row!important;
+  display: inline-flex !important;
+  flex-direction: row !important;
   // justify-content: space-around;
   // flex-wrap: nowrap;
-  align-items: center!important;
-  width: 100%!important;
+  align-items: center !important;
+  width: 100% !important;
   // flex-grow: 1;
   padding: 5px;
 }
 
 .step-list:after {
-}
 
-.step-list__steps {
   height: 50px;
   width: 50px;
   align-self: center;
@@ -43,29 +40,27 @@
   background-color: black;
 }
 
-.lighter-list {
-}
+// .lighter-list {
+// }
 
 .lighter-list__lights {
-  display: flex!important;
-  flex-direction: column!important;
-  justify-content: space-between!important;
-  height: 2vw!important;
-  width: 2vw!important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  height: 2vw !important;
+  width: 2vw !important;
   border-radius: 100%;
   background-color: black;
-  
 }
 
-.itsLit {
-}
+// .itsLit {
+// }
 
-.position-list {
-}
+// .position-list {
+// }
 
 .position-list__numbers {
-align-self: center!important;
-text-align: center!important;
-font-family: "Citypop"!important;
+  align-self: center !important;
+  text-align: center !important;
+  font-family: "Citypop" !important;
 }
-
