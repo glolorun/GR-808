@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import { Transport } from 'tone';
 import { LogService } from 'src/app/Utility/log.service';
-import { InstrumentService, instName } from "../instruments/instrument.service";
+import { InstrumentService, instName } from "../Instruments/instrument.service";
 import { DOCUMENT } from '@angular/common';
 
 @Injectable({

@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Transport } from "tone";
 import { ClockComponent } from "../Components/clock/clock.component";
-import { InstrumentService } from "../Components/instruments/instrument.service";
+import { InstrumentService } from "../Components/Instruments/instrument.service";
 
 @Component({
   selector: 'app-header',
@@ -29,7 +29,6 @@ export class HeaderComponent implements OnInit {
   };
 
 
-  
  play(): void {
   this.loopEvent.emit,
   this.clockComponent.defaultLoop();

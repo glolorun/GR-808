@@ -1,7 +1,6 @@
-// @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 mat-list,
-.track-list {
+.interface__track-list {
   display: flex!important;
   // gap: 20px;
 
@@ -11,14 +10,14 @@ mat-list,
 }
 
 mat-list-item,
-.step-list__steps {
+.interface__step-list-steps {
   min-height: 0!important;
   // grid-template-columns : repeat(5,1fr);
   // grid-template-rows : repeat(5,1fr);
 
 }
 
-.step-list__steps {
+.interface__step-list-steps {
   // display: inline-block;
   background-color: black;
 
@@ -33,7 +32,7 @@ mat-list-item,
 // .lighter-list {
 // }
 
-.lighter-list__lights {
+.interface__lighter-list-lights {
   // display: flex !important;
   // justify-content: space-between !important;
   position: relative;
@@ -50,7 +49,7 @@ mat-list-item,
 // .position-list {
 // }
 
-.position-list__numbers {
+.interface__position-list-numbers {
   // align-items: center;
   // text-align: center !important;
   font-family: "Citypop" !important;

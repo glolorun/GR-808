@@ -1,4 +1,4 @@
-import { InstrumentEngine } from './instrument-engine';
+import { InstrumentEngine } from "./instrument-engine";
 
 export class Instrument implements InstrumentEngine {
   private ctx: AudioContext;

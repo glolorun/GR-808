@@ -6,7 +6,7 @@ import {
   // INSTRUMENTBUTTONS,
 } from '../interface-element/interface-element.component';
 import { ViewEncapsulation } from '@angular/core';
-import { InstrumentService, instName } from '../instruments/instrument.service';
+import { InstrumentService, instName } from '../Instruments/instrument.service';
 import { LogService } from 'src/app/Utility/log.service';
 import { FormControl } from '@angular/forms';
 import { ClockComponent } from '../clock/clock.component';
@@ -85,18 +85,6 @@ elementIsPressed(): boolean {
     this.loopEvent.emit, (this.runLoop = this.clockComponent.playLoop());
   }
 
-  stop = () => {
-    Transport.stop();
-    Transport.clear(this.clockComponent.loopId);
-  };
-
-  pause = () => {
-    Transport.stop();
-  };
-
-  play = () => {
-    Transport.start();
-  };
 
   // stopLoop(): void {
   //   this.loopEvent.emit,

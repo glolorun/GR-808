@@ -10,9 +10,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { MatDividerModule } from '@angular/material/divider';
 import { ClockComponent } from './Components/clock/clock.component';
-import { InstrumentService } from './Components/instruments/instrument.service';
+import { InstrumentService } from './Components/Instruments/instrument.service';
 import { LogService } from './Utility/log.service';
-import { StepsComponent } from './steps/steps.component';
 import { ReactiveFormsModule } from "@angular/forms";
 import { HeaderComponent } from './header/header.component';
 
@@ -23,7 +22,6 @@ export let AppInjector: Injector;
     AppComponent,
     InterfaceComponent,
     ClockComponent,
-    StepsComponent,
     HeaderComponent,
   ],
   imports: [

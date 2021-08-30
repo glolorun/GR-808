@@ -19,12 +19,13 @@
   width: 100%;
   grid-template-areas: "header";
 // padding-bottom: 20rem;
-  background-color: midnightblue;
+  background-color: rgb(237, 107, 88);
 }
 
 .app-interface__wrapper {
   width: 100%;
   grid-template-areas: "main";
-  background-color: grey;
+  background-color: rgb(255, 250, 241);
+  border: black;
 }
 

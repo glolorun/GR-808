@@ -1,14 +1,14 @@
-<div class="grid-wrapper">
-  <div class="grid-1">
-  <mat-list  role="list" class="track-list" >
+<div class="interface__grid-wrapper">
+  <div class="interface__grid-1">
+  <mat-list  role="list" class="interface__track-list" >
     <button class="instrument-select" (click)="startLoop()"  (click)="currentTimeLog()"       (keypress)="getInstrument()"
     (click)="startLoop()">{{instrumentName}}</button>
     <!-- <button *ngFor="let instrumentButton of instrumentButtons; ; let i = index;" [attr.id]="'step-' + i" type="button">{{instrumentButton.value}}</button> -->
-    <mat-list-item class="step-list" *ngFor="let step of steps; let i = index;" [attr.id]="(i)" 
+    <mat-list-item class="interface__step-list" *ngFor="let step of steps; let i = index;" [attr.id]="(i)" 
       >{{ step.value }}
       <input     [ngClass]="{'background-color:green': isActive, 'background-color:black': !isActive }"
  
-        class="step-list__steps"
+        class="interface__step-list-steps"
         type="button"
         (click)="elementIsPressed()"
         (click)="getInstrument()"
@@ -18,8 +18,8 @@
     </mat-list-item>
   </mat-list>
 </div>
-<!-- <div class="grid-2">
-  <mat-list role="list" class="lighter-list">
+<!-- <div class="interface__grid-2">
+  <mat-list role="list" class="interface__lighter-list">
     <mat-list-item
       class="lighter-list__lights"
       [ngClass]="{
@@ -30,10 +30,10 @@
     </mat-list-item>
   </mat-list>
 </div> -->
-<div class="grid-3">
-  <mat-list role="list" class="position-list">
+<div class="interface__grid-3">
+  <mat-list role="list" class="interface__position-list">
     <mat-list-item
-      class="position-list__number"
+      class="interface__position-list-number"
       *ngFor="let position of positions"
       ><p>{{ position.value }}</p>
     </mat-list-item>

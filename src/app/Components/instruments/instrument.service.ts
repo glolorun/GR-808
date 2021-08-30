@@ -7,8 +7,8 @@ import {
   ViewChild,
 } from '@angular/core';
 import { Transport } from 'tone';
-import { Instrument } from 'src/app/Engines/kick';
 import { LogService } from 'src/app/Utility/log.service';
+import { Instrument } from "./kick";
 import { STEPS } from '../interface-element/interface-element.component';
 import { ClockComponent } from '../clock/clock.component';
 import { DOCUMENT } from '@angular/common';
