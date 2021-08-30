@@ -19,30 +19,16 @@ mat-list-item,
 }
 
 .step-list__steps {
+  // display: inline-block;
+  background-color: black;
+
   height: 50px;
   width: 50px;
   align-self: center;
 }
 
-.step-list__steps:hover {
-  background-color: blue;
-}
 
-.isInactive {
-  background-color: black;
-}
 
-.isArmed {
-  background-color: red;
-}
-
-.isLive {
-  background-color: green;
-}
-
-.isCounting {
-  background-color: black;
-}
 
 // .lighter-list {
 // }

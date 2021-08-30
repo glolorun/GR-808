@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class LogService {
 
   log(msg: any) {
-    console.log(new Date() + ": " + JSON.stringify(msg));
+    console.log(new Date() + "logging: " + JSON.stringify(msg));
 }
 
 }

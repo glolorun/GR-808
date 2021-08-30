@@ -3,12 +3,15 @@ import {
   STEPS,
   LIGHTERS,
   POSITIONS,
-  INSTRUMENTBUTTONS,
+  // INSTRUMENTBUTTONS,
 } from '../interface-element/interface-element.component';
 import { ViewEncapsulation } from '@angular/core';
 import { InstrumentService, instName } from '../instruments/instrument.service';
 import { LogService } from 'src/app/Utility/log.service';
-import { OuterSubscriber } from "rxjs/internal/OuterSubscriber";
+import { FormControl } from '@angular/forms';
+import { ClockComponent } from '../clock/clock.component';
+import { DOCUMENT } from '@angular/common';
+import { Transport, TransportTime } from 'tone';
 
 @Component({
   selector: 'app-interface',
@@ -17,8 +20,27 @@ import { OuterSubscriber } from "rxjs/internal/OuterSubscriber";
   encapsulation: ViewEncapsulation.None,
 })
 export class InterfaceComponent implements OnInit {
-  @Input() stepArmed: boolean = false;
-  @Input() currentNote: boolean = false;
+  constructor(
+    private instrumentService: InstrumentService,
+    private logger: LogService,
+    private clockComponent: ClockComponent
+  ) {}
+@Input() isActive: boolean = false
+@Input() pressed: boolean = false
+
+
+
+elementIsPressed(): boolean {
+  return this.isActive
+}
+
+ elementIsActive(): boolean {
+  return this.isActive
+}
+
+  // get stepIsPressed(): boolean {
+  //   return this.stepPress;
+  // }
 
   @Input() clickButton = new EventEmitter();
 
@@ -27,41 +49,63 @@ export class InterfaceComponent implements OnInit {
 
   @Output()
   public loopEvent = new EventEmitter<MouseEvent>();
-  // @Input() bpm: number = 120
 
   public enabled = this.clickButton;
 
-  public itsLit = (this.currentNote = true);
+  // public itsLit = (this.currentNote = true);
 
-  steps = STEPS;
+  public steps = STEPS;
   lighters = LIGHTERS;
   positions = POSITIONS;
-  instrumentButtons = INSTRUMENTBUTTONS;
+  // instrumentButtons = INSTRUMENTBUTTONS;
   handleInstrument: void;
-  instrumentName = instName
+  instrumentName = instName;
   runLoop: void;
 
+  // Activator.handleId(Activator.id);
 
-// return
-  constructor(
-    private instrumentService: InstrumentService,
-  ) {}
-
-  getInstrument(): void {
-    this.instrumentEvent.emit,
-      (this.handleInstrument = this.instrumentService.triggerInstruments());
+  currentTimeLog(): void {
+    this.logger.log(Transport.position);
   }
 
-startloop(): void {
-  this.loopEvent.emit,
-  (this.runLoop = this.instrumentService.handleStart());
-}
+ 
+   
 
-  // listClick(event, newValue) {
-  //   console.log(newValue);
-  //   this.selectedItem = newValue;  // don't forget to update the model here
-  //   // ... do other stuff here ...
+
+  getInstrument(): void {
+    this.instrumentEvent.emit, this.actionLog();
+    this.handleInstrument = this.instrumentService.triggerInstruments();
+  }
+
+  actionLog(): void {
+    this.logger.log('Trigging');
+  }
+
+  startLoop(): void {
+    this.loopEvent.emit, (this.runLoop = this.clockComponent.playLoop());
+  }
+
+  stop = () => {
+    Transport.stop();
+    Transport.clear(this.clockComponent.loopId);
+  };
+
+  pause = () => {
+    Transport.stop();
+  };
+
+  play = () => {
+    Transport.start();
+  };
+
+  // stopLoop(): void {
+  //   this.loopEvent.emit,
+  //   (this.stopLoop = this.instrumentService.handleStart());
   // }
+
+  // id: number;
+  // onClick: (id: number) => void;
+  // on: boolean
 
   ngOnInit() {}
 }

@@ -1,25 +1,24 @@
 <div class="grid-wrapper">
   <div class="grid-1">
   <mat-list  role="list" class="track-list" >
-    <button class="instrument-select" (click)="getInstrument()" (click)="startloop()">{{instrumentName}}</button>
+    <button class="instrument-select" (click)="startLoop()"  (click)="currentTimeLog()"       (keypress)="getInstrument()"
+    (click)="startLoop()">{{instrumentName}}</button>
     <!-- <button *ngFor="let instrumentButton of instrumentButtons; ; let i = index;" [attr.id]="'step-' + i" type="button">{{instrumentButton.value}}</button> -->
-    <mat-list-item class="step-list" *ngFor="let step of steps; let i = index;" [attr.id]="'step-' + i"
+    <mat-list-item class="step-list" *ngFor="let step of steps; let i = index;" [attr.id]="(i)" 
       >{{ step.value }}
-      <button
+      <input     [ngClass]="{'background-color:green': isActive, 'background-color:black': !isActive }"
+ 
         class="step-list__steps"
+        type="button"
+        (click)="elementIsPressed()"
         (click)="getInstrument()"
+
         (keypress)="getInstrument()"
-        [ngClass]="{
-          isInactive: !stepArmed && !currentNote,
-          isArmed: stepArmed && !currentNote,
-          isLive: stepArmed && currentNote,
-          isCounting: !stepArmed && currentNote
-        }"
-      ></button>
+      >
     </mat-list-item>
   </mat-list>
 </div>
-<div class="grid-2">
+<!-- <div class="grid-2">
   <mat-list role="list" class="lighter-list">
     <mat-list-item
       class="lighter-list__lights"
@@ -30,7 +29,7 @@
       >{{ lighter.value }}
     </mat-list-item>
   </mat-list>
-</div>
+</div> -->
 <div class="grid-3">
   <mat-list role="list" class="position-list">
     <mat-list-item

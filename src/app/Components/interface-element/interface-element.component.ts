@@ -1,11 +1,12 @@
 import { Component, OnInit, Output } from '@angular/core';
-import { Kick } from "src/app/Engines/kick";
-import { BpmComponent } from "src/app/Components/bpm/bpm.component";
+// import { Kick } from "src/app/Engines/kick";
+import { ClockComponent } from "src/app/Components/clock/clock.component";
 // import { noteDue, NotesInQueue, scheduleNote } from "../note";
 
 export interface Step {
   id: number;
   value: string;
+  
 }
 
 export interface Lighter {
@@ -80,33 +81,30 @@ export const POSITIONS: Position[] = [
   { id: 16, value: '16'}
 ]
 
-export const INSTRUMENTBUTTONS: InstrumentButton[] = [
-  { id: 1, value: 'Kick'},
-  { id: 2, value: 'Snare'},
-  { id: 3, value: 'Hat'},
-  { id: 4, value: '808'},
+// export const INSTRUMENTBUTTONS: InstrumentButton[] = [
+//   { id: 1, value: 'Kick'},
+//   { id: 2, value: 'Snare'},
+//   { id: 3, value: 'Hat'},
+//   { id: 4, value: '808'},
 
-]
+// ]
 
 
 
 // export function scheduler() {
 //   while (noteDue.nextNoteTime < audioCtx.currentTime + bpmSchedule.scheduleAheadTime ) {
 //       scheduleNote(noteDue.currentNote, noteDue.nextNoteTime);
-//       Bpm.nextNote();
+//       Clock.nextNote();
 //   }
 // }
 
 @Component({
   selector: 'app-interface-element',
   templateUrl: './interface-element.component.html',
-  styleUrls: ['./interface-element.component.scss']
 })
 export class InterfaceElementComponent implements OnInit {
 
   
-
-
   ngOnInit(): void {}
 
 }

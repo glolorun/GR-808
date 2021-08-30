@@ -9,11 +9,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { MatDividerModule } from '@angular/material/divider';
-import { MetronomeComponent } from './Components/metronome/metronome.component';
-import { BpmComponent } from './Components/bpm/bpm.component';
-import { InstrumentsComponent } from './Components/instruments/instruments.component';
+import { ClockComponent } from './Components/clock/clock.component';
 import { InstrumentService } from './Components/instruments/instrument.service';
 import { LogService } from './Utility/log.service';
+import { StepsComponent } from './steps/steps.component';
+import { ReactiveFormsModule } from "@angular/forms";
+import { HeaderComponent } from './header/header.component';
 
 export let AppInjector: Injector;
 
@@ -21,9 +22,9 @@ export let AppInjector: Injector;
   declarations: [
     AppComponent,
     InterfaceComponent,
-    BpmComponent,
-    MetronomeComponent,
-    InstrumentsComponent,
+    ClockComponent,
+    StepsComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +35,7 @@ export let AppInjector: Injector;
     MatButtonModule,
     MatDividerModule,
     CommonModule,
+    ReactiveFormsModule
   ],
   providers: [InstrumentService, LogService],
   bootstrap: [AppComponent],

@@ -1,5 +1,5 @@
 // @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-.app-container {
+.app__wrapper {
   margin: 10%;
   display: grid;
   width: 70%;
@@ -15,14 +15,14 @@
   // border-radius: 10px;
 }
 
-.header-container {
+.app-header__wrapper {
   width: 100%;
   grid-template-areas: "header";
 // padding-bottom: 20rem;
   background-color: midnightblue;
 }
 
-.app-interface__container {
+.app-interface__wrapper {
   width: 100%;
   grid-template-areas: "main";
   background-color: grey;

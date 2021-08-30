@@ -1,6 +1,6 @@
 import { InstrumentEngine } from './instrument-engine';
 
-export class Kick implements InstrumentEngine {
+export class Instrument implements InstrumentEngine {
   private ctx: AudioContext;
   public tone: number;
   public decay: number;
