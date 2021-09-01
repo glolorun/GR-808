@@ -11,6 +11,8 @@ import { Transport } from 'tone';
 import { LogService } from 'src/app/Utility/log.service';
 import { InstrumentService, instName } from "../Instruments/instrument.service";
 import { DOCUMENT } from '@angular/common';
+import * as Tone from 'tone'
+
 
 @Injectable({
   providedIn: 'root',
@@ -82,6 +84,9 @@ public defaultLoop = () => {
 public playLoop() {
   this.defaultLoop();
   Transport.start();
+}
+public stopLoop() {
+  Transport.stop();
 }
 
 

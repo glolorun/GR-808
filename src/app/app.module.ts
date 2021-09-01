@@ -1,4 +1,4 @@
-import { NgModule, Injector } from '@angular/core';
+import { NgModule, Injector, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
@@ -14,6 +14,9 @@ import { InstrumentService } from './Components/Instruments/instrument.service';
 import { LogService } from './Utility/log.service';
 import { ReactiveFormsModule } from "@angular/forms";
 import { HeaderComponent } from './header/header.component';
+import { InterfaceElementComponent } from "./Components/interface-element/interface-element.component";
+import * as Tone from 'tone'
+
 
 export let AppInjector: Injector;
 
@@ -23,6 +26,7 @@ export let AppInjector: Injector;
     InterfaceComponent,
     ClockComponent,
     HeaderComponent,
+    InterfaceElementComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +39,7 @@ export let AppInjector: Injector;
     CommonModule,
     ReactiveFormsModule
   ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ],
   providers: [InstrumentService, LogService],
   bootstrap: [AppComponent],
 })

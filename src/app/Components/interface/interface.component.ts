@@ -3,15 +3,12 @@ import {
   STEPS,
   LIGHTERS,
   POSITIONS,
-  // INSTRUMENTBUTTONS,
 } from '../interface-element/interface-element.component';
 import { ViewEncapsulation } from '@angular/core';
 import { InstrumentService, instName } from '../Instruments/instrument.service';
 import { LogService } from 'src/app/Utility/log.service';
-import { FormControl } from '@angular/forms';
 import { ClockComponent } from '../clock/clock.component';
-import { DOCUMENT } from '@angular/common';
-import { Transport, TransportTime } from 'tone';
+import { Transport } from 'tone';
 
 @Component({
   selector: 'app-interface',
@@ -25,22 +22,8 @@ export class InterfaceComponent implements OnInit {
     private logger: LogService,
     private clockComponent: ClockComponent
   ) {}
-@Input() isActive: boolean = false
-@Input() pressed: boolean = false
 
-
-
-elementIsPressed(): boolean {
-  return this.isActive
-}
-
- elementIsActive(): boolean {
-  return this.isActive
-}
-
-  // get stepIsPressed(): boolean {
-  //   return this.stepPress;
-  // }
+  @Input() isActive: boolean = false;
 
   @Input() clickButton = new EventEmitter();
 
@@ -52,25 +35,17 @@ elementIsPressed(): boolean {
 
   public enabled = this.clickButton;
 
-  // public itsLit = (this.currentNote = true);
-
   public steps = STEPS;
+  parentMessage = this.steps;
   lighters = LIGHTERS;
   positions = POSITIONS;
-  // instrumentButtons = INSTRUMENTBUTTONS;
   handleInstrument: void;
   instrumentName = instName;
   runLoop: void;
 
-  // Activator.handleId(Activator.id);
-
   currentTimeLog(): void {
     this.logger.log(Transport.position);
   }
-
- 
-   
-
 
   getInstrument(): void {
     this.instrumentEvent.emit, this.actionLog();
@@ -85,15 +60,9 @@ elementIsPressed(): boolean {
     this.loopEvent.emit, (this.runLoop = this.clockComponent.playLoop());
   }
 
-
-  // stopLoop(): void {
-  //   this.loopEvent.emit,
-  //   (this.stopLoop = this.instrumentService.handleStart());
-  // }
-
-  // id: number;
-  // onClick: (id: number) => void;
-  // on: boolean
-
+  public handleStop() {
+    this.loopEvent.emit,
+    Transport.stop();
+  }
   ngOnInit() {}
 }

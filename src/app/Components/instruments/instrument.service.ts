@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { Transport } from 'tone';
 import { LogService } from 'src/app/Utility/log.service';
-import { Instrument } from "./kick";
+import { Instrument } from './kick';
 import { STEPS } from '../interface-element/interface-element.component';
 import { ClockComponent } from '../clock/clock.component';
 import { DOCUMENT } from '@angular/common';
@@ -22,8 +22,6 @@ export const InstrumentSelect = {
 export interface TemplateLiteral {
   name: string;
 }
-
-
 
 export const instName = InstrumentSelect.Kick;
 
@@ -83,13 +81,12 @@ export class InstrumentService {
   public triggerInstruments() {
     this.kick.trigger(this.ctx.currentTime),
       this.logger.log('Trigging '),
-      this.instrumentLog()
+      this.instrumentLog();
   }
 
   // public giveInstruments() {
   //   this.kick.trigger(this.ctx.currentTime)
   // }
-
 
   public stepsArray =
     this._document.getElementsByClassName('.step-list__steps');
@@ -120,22 +117,5 @@ export class InstrumentService {
   //   this.logger.log('Trigging ' + beatNumber);
   // }
 
-  ///rebuild in interface/////
-  // public defaultLoop = () => {
-  //   Transport.clear(this.loopId);
-  //   const loop = (time: number) => {
-  //     //4 to the floor
-  //     this.kick.trigger(time);
-  //     this.kick.trigger(time + 0.5);
-  //     this.kick.trigger(time + 1);
-  //     this.kick.trigger(time + 1.5);
-  //     this.loopLog();
-  //   };
-  //   this.loopId = Transport.schedule(loop, '0');
-  // };
 
-  // public handleStart() {
-  //   this.defaultLoop();
-  //   Transport.start();
-  // }
 }
